@@ -71,6 +71,8 @@ function pug() {
 	)
 	.pipe(sassGlob())
 	.pipe(gulppug({pretty: true}))
+	.pipe(replace(/&lt;/g, '<'))
+	.pipe(replace(/&gt;/g, '>'))
 	.pipe(size({
 		showFiles:true
 	}))
